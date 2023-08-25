@@ -75,6 +75,11 @@ namespace QuanLyBanSach
             this.billingTblTableAdapter = new QuanLyBanSach.BookShopDataDataSet3TableAdapters.BillingTblTableAdapter();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataBookDataSet = new QuanLyBanSach.DataBookDataSet();
+            this.bookTblTableAdapter1 = new QuanLyBanSach.DataBookDataSetTableAdapters.BookTblTableAdapter();
+            this.tableAdapterManager = new QuanLyBanSach.DataBookDataSetTableAdapters.TableAdapterManager();
+            this.fillBy3ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy3ToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource1)).BeginInit();
@@ -91,6 +96,8 @@ namespace QuanLyBanSach
             ((System.ComponentModel.ISupportInitialize)(this.bookShopDataDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billTblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookShopDataDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBookDataSet)).BeginInit();
+            this.fillBy3ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // bookShopDataSetBindingSource
@@ -121,15 +128,11 @@ namespace QuanLyBanSach
             // 
             this.BDeleteBtn.AutoRoundedCorners = true;
             this.BDeleteBtn.BorderRadius = 15;
-            this.BDeleteBtn.CheckedState.Parent = this.BDeleteBtn;
-            this.BDeleteBtn.CustomImages.Parent = this.BDeleteBtn;
             this.BDeleteBtn.FillColor = System.Drawing.Color.Brown;
             this.BDeleteBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BDeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.BDeleteBtn.HoverState.Parent = this.BDeleteBtn;
             this.BDeleteBtn.Location = new System.Drawing.Point(506, 98);
             this.BDeleteBtn.Name = "BDeleteBtn";
-            this.BDeleteBtn.ShadowDecoration.Parent = this.BDeleteBtn;
             this.BDeleteBtn.Size = new System.Drawing.Size(157, 32);
             this.BDeleteBtn.TabIndex = 133;
             this.BDeleteBtn.Text = "Xóa";
@@ -145,7 +148,7 @@ namespace QuanLyBanSach
             this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(1021, 0);
+            this.button3.Location = new System.Drawing.Point(1041, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(54, 57);
             this.button3.TabIndex = 4;
@@ -214,7 +217,7 @@ namespace QuanLyBanSach
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1075, 45);
+            this.panel7.Size = new System.Drawing.Size(1095, 45);
             this.panel7.TabIndex = 5;
             // 
             // panel4
@@ -225,7 +228,7 @@ namespace QuanLyBanSach
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1075, 57);
+            this.panel4.Size = new System.Drawing.Size(1095, 57);
             this.panel4.TabIndex = 6;
             // 
             // panel3
@@ -235,7 +238,7 @@ namespace QuanLyBanSach
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(215, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1075, 45);
+            this.panel3.Size = new System.Drawing.Size(1095, 45);
             this.panel3.TabIndex = 116;
             // 
             // panel1
@@ -251,7 +254,7 @@ namespace QuanLyBanSach
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 704);
+            this.panel1.Size = new System.Drawing.Size(215, 721);
             this.panel1.TabIndex = 115;
             // 
             // button2
@@ -498,11 +501,47 @@ namespace QuanLyBanSach
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // dataBookDataSet
+            // 
+            this.dataBookDataSet.DataSetName = "DataBookDataSet";
+            this.dataBookDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bookTblTableAdapter1
+            // 
+            this.bookTblTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BillingTblTableAdapter = null;
+            this.tableAdapterManager.BookTblTableAdapter = this.bookTblTableAdapter1;
+            this.tableAdapterManager.UpdateOrder = QuanLyBanSach.DataBookDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UserTblTableAdapter = null;
+            // 
+            // fillBy3ToolStrip
+            // 
+            this.fillBy3ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBy3ToolStripButton});
+            this.fillBy3ToolStrip.Location = new System.Drawing.Point(215, 45);
+            this.fillBy3ToolStrip.Name = "fillBy3ToolStrip";
+            this.fillBy3ToolStrip.Size = new System.Drawing.Size(1095, 25);
+            this.fillBy3ToolStrip.TabIndex = 137;
+            this.fillBy3ToolStrip.Text = "fillBy3ToolStrip";
+            // 
+            // fillBy3ToolStripButton
+            // 
+            this.fillBy3ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy3ToolStripButton.Name = "fillBy3ToolStripButton";
+            this.fillBy3ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy3ToolStripButton.Text = "FillBy3";
+            this.fillBy3ToolStripButton.Click += new System.EventHandler(this.fillBy3ToolStripButton_Click);
+            // 
             // BillManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 704);
+            this.ClientSize = new System.Drawing.Size(1310, 721);
+            this.Controls.Add(this.fillBy3ToolStrip);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.BillDGV);
@@ -533,6 +572,9 @@ namespace QuanLyBanSach
             ((System.ComponentModel.ISupportInitialize)(this.bookShopDataDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billTblBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookShopDataDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBookDataSet)).EndInit();
+            this.fillBy3ToolStrip.ResumeLayout(false);
+            this.fillBy3ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,5 +623,10 @@ namespace QuanLyBanSach
         private System.Windows.Forms.Button btnPurchase;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private DataBookDataSet dataBookDataSet;
+        private DataBookDataSetTableAdapters.BookTblTableAdapter bookTblTableAdapter1;
+        private DataBookDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ToolStrip fillBy3ToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBy3ToolStripButton;
     }
 }

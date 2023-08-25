@@ -18,7 +18,7 @@ namespace QuanLyBanSach
             InitializeComponent();
             populate();
         }
-        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\baolu\Desktop\KiemDinhPhanMem\PhanMemQuanLySach\TTNL\QuanLyBanSach\BookShopData.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\baolu\Documents\DataBook.mdf;Integrated Security=True;Connect Timeout=30");
         private void populate()
         {
             Con.Open();
@@ -142,6 +142,19 @@ namespace QuanLyBanSach
 
         private void label8_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void fillBy3ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bookTblTableAdapter1.FillBy3(this.dataBookDataSet.BookTbl);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

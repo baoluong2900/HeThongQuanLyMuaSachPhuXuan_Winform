@@ -38,6 +38,9 @@ namespace QuanLyBanSach
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bookTblBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.bookShopDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookShopDataSet = new QuanLyBanSach.BookShopDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -64,9 +67,6 @@ namespace QuanLyBanSach
             this.label8 = new System.Windows.Forms.Label();
             this.BPublisherTb = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.bookTblBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.bookShopDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookShopDataSet = new QuanLyBanSach.BookShopDataSet();
             this.bookTblBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bookTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookTblTableAdapter = new QuanLyBanSach.BookShopDataSetTableAdapters.BookTblTableAdapter();
@@ -76,26 +76,38 @@ namespace QuanLyBanSach
             this.BEditBtn = new Guna.UI2.WinForms.Guna2Button();
             this.BCancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.BResetBtn = new System.Windows.Forms.Button();
-            this.BookDGV = new System.Windows.Forms.DataGridView();
-            this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookAuthorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookCatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookPublisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookPublisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookCatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookAuthorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookDGV = new System.Windows.Forms.DataGridView();
+            this.dataBookDataSet = new QuanLyBanSach.DataBookDataSet();
+            this.bookTblBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.bookTblTableAdapter1 = new QuanLyBanSach.DataBookDataSetTableAdapters.BookTblTableAdapter();
+            this.tableAdapterManager = new QuanLyBanSach.DataBookDataSetTableAdapters.TableAdapterManager();
+            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BookDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBookDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource3)).BeginInit();
+            this.fillBy1ToolStrip.SuspendLayout();
+            this.fillBy2ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -127,6 +139,21 @@ namespace QuanLyBanSach
             this.panel2.Size = new System.Drawing.Size(215, 140);
             this.panel2.TabIndex = 4;
             // 
+            // bookTblBindingSource2
+            // 
+            this.bookTblBindingSource2.DataMember = "BookTbl";
+            this.bookTblBindingSource2.DataSource = this.bookShopDataSetBindingSource;
+            // 
+            // bookShopDataSetBindingSource
+            // 
+            this.bookShopDataSetBindingSource.DataSource = this.bookShopDataSet;
+            this.bookShopDataSetBindingSource.Position = 0;
+            // 
+            // bookShopDataSet
+            // 
+            this.bookShopDataSet.DataSetName = "BookShopDataSet";
+            this.bookShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -155,7 +182,7 @@ namespace QuanLyBanSach
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(215, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1075, 45);
+            this.panel3.Size = new System.Drawing.Size(1083, 45);
             this.panel3.TabIndex = 43;
             // 
             // panel7
@@ -165,7 +192,7 @@ namespace QuanLyBanSach
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1075, 45);
+            this.panel7.Size = new System.Drawing.Size(1083, 45);
             this.panel7.TabIndex = 5;
             // 
             // panel4
@@ -176,7 +203,7 @@ namespace QuanLyBanSach
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1075, 57);
+            this.panel4.Size = new System.Drawing.Size(1083, 57);
             this.panel4.TabIndex = 6;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -190,7 +217,7 @@ namespace QuanLyBanSach
             this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(1021, 0);
+            this.button3.Location = new System.Drawing.Point(1029, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(54, 57);
             this.button3.TabIndex = 4;
@@ -445,21 +472,6 @@ namespace QuanLyBanSach
             this.label11.TabIndex = 104;
             this.label11.Text = "Nhà xuất bản";
             // 
-            // bookTblBindingSource2
-            // 
-            this.bookTblBindingSource2.DataMember = "BookTbl";
-            this.bookTblBindingSource2.DataSource = this.bookShopDataSetBindingSource;
-            // 
-            // bookShopDataSetBindingSource
-            // 
-            this.bookShopDataSetBindingSource.DataSource = this.bookShopDataSet;
-            this.bookShopDataSetBindingSource.Position = 0;
-            // 
-            // bookShopDataSet
-            // 
-            this.bookShopDataSet.DataSetName = "BookShopDataSet";
-            this.bookShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bookTblBindingSource1
             // 
             this.bookTblBindingSource1.DataMember = "BookTbl";
@@ -496,15 +508,11 @@ namespace QuanLyBanSach
             // 
             this.BSaveBtn.AutoRoundedCorners = true;
             this.BSaveBtn.BorderRadius = 20;
-            this.BSaveBtn.CheckedState.Parent = this.BSaveBtn;
-            this.BSaveBtn.CustomImages.Parent = this.BSaveBtn;
             this.BSaveBtn.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.BSaveBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSaveBtn.ForeColor = System.Drawing.Color.White;
-            this.BSaveBtn.HoverState.Parent = this.BSaveBtn;
             this.BSaveBtn.Location = new System.Drawing.Point(306, 146);
             this.BSaveBtn.Name = "BSaveBtn";
-            this.BSaveBtn.ShadowDecoration.Parent = this.BSaveBtn;
             this.BSaveBtn.Size = new System.Drawing.Size(157, 42);
             this.BSaveBtn.TabIndex = 6;
             this.BSaveBtn.Text = "Thêm";
@@ -514,15 +522,11 @@ namespace QuanLyBanSach
             // 
             this.BDeleteBtn.AutoRoundedCorners = true;
             this.BDeleteBtn.BorderRadius = 20;
-            this.BDeleteBtn.CheckedState.Parent = this.BDeleteBtn;
-            this.BDeleteBtn.CustomImages.Parent = this.BDeleteBtn;
             this.BDeleteBtn.FillColor = System.Drawing.Color.Brown;
             this.BDeleteBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BDeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.BDeleteBtn.HoverState.Parent = this.BDeleteBtn;
             this.BDeleteBtn.Location = new System.Drawing.Point(563, 146);
             this.BDeleteBtn.Name = "BDeleteBtn";
-            this.BDeleteBtn.ShadowDecoration.Parent = this.BDeleteBtn;
             this.BDeleteBtn.Size = new System.Drawing.Size(157, 42);
             this.BDeleteBtn.TabIndex = 7;
             this.BDeleteBtn.Text = "Xóa";
@@ -532,15 +536,11 @@ namespace QuanLyBanSach
             // 
             this.BEditBtn.AutoRoundedCorners = true;
             this.BEditBtn.BorderRadius = 20;
-            this.BEditBtn.CheckedState.Parent = this.BEditBtn;
-            this.BEditBtn.CustomImages.Parent = this.BEditBtn;
             this.BEditBtn.FillColor = System.Drawing.Color.Orange;
             this.BEditBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditBtn.ForeColor = System.Drawing.Color.White;
-            this.BEditBtn.HoverState.Parent = this.BEditBtn;
             this.BEditBtn.Location = new System.Drawing.Point(831, 146);
             this.BEditBtn.Name = "BEditBtn";
-            this.BEditBtn.ShadowDecoration.Parent = this.BEditBtn;
             this.BEditBtn.Size = new System.Drawing.Size(157, 42);
             this.BEditBtn.TabIndex = 8;
             this.BEditBtn.Text = "Sửa";
@@ -550,15 +550,11 @@ namespace QuanLyBanSach
             // 
             this.BCancelBtn.AutoRoundedCorners = true;
             this.BCancelBtn.BorderRadius = 20;
-            this.BCancelBtn.CheckedState.Parent = this.BCancelBtn;
-            this.BCancelBtn.CustomImages.Parent = this.BCancelBtn;
             this.BCancelBtn.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.BCancelBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCancelBtn.ForeColor = System.Drawing.Color.White;
-            this.BCancelBtn.HoverState.Parent = this.BCancelBtn;
             this.BCancelBtn.Location = new System.Drawing.Point(1082, 146);
             this.BCancelBtn.Name = "BCancelBtn";
-            this.BCancelBtn.ShadowDecoration.Parent = this.BCancelBtn;
             this.BCancelBtn.Size = new System.Drawing.Size(157, 42);
             this.BCancelBtn.TabIndex = 9;
             this.BCancelBtn.Text = "Hủy";
@@ -572,13 +568,68 @@ namespace QuanLyBanSach
             this.BResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BResetBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BResetBtn.ForeColor = System.Drawing.Color.White;
-            this.BResetBtn.Location = new System.Drawing.Point(738, 239);
+            this.BResetBtn.Location = new System.Drawing.Point(742, 239);
             this.BResetBtn.Name = "BResetBtn";
             this.BResetBtn.Size = new System.Drawing.Size(102, 38);
             this.BResetBtn.TabIndex = 102;
             this.BResetBtn.Text = "Làm mới";
             this.BResetBtn.UseVisualStyleBackColor = false;
             this.BResetBtn.Click += new System.EventHandler(this.BResetBtn_Click);
+            // 
+            // bookPriceDataGridViewTextBoxColumn
+            // 
+            this.bookPriceDataGridViewTextBoxColumn.DataPropertyName = "BookPrice";
+            this.bookPriceDataGridViewTextBoxColumn.HeaderText = "Giá";
+            this.bookPriceDataGridViewTextBoxColumn.Name = "bookPriceDataGridViewTextBoxColumn";
+            this.bookPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookPriceDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // bookQuantityDataGridViewTextBoxColumn
+            // 
+            this.bookQuantityDataGridViewTextBoxColumn.DataPropertyName = "BookQuantity";
+            this.bookQuantityDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.bookQuantityDataGridViewTextBoxColumn.Name = "bookQuantityDataGridViewTextBoxColumn";
+            this.bookQuantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookPublisherDataGridViewTextBoxColumn
+            // 
+            this.bookPublisherDataGridViewTextBoxColumn.DataPropertyName = "BookPublisher";
+            this.bookPublisherDataGridViewTextBoxColumn.HeaderText = "Nhà xuất bản";
+            this.bookPublisherDataGridViewTextBoxColumn.Name = "bookPublisherDataGridViewTextBoxColumn";
+            this.bookPublisherDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookPublisherDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // bookCatDataGridViewTextBoxColumn
+            // 
+            this.bookCatDataGridViewTextBoxColumn.DataPropertyName = "BookCat";
+            this.bookCatDataGridViewTextBoxColumn.HeaderText = "Thể loại";
+            this.bookCatDataGridViewTextBoxColumn.Name = "bookCatDataGridViewTextBoxColumn";
+            this.bookCatDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookCatDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // bookAuthorDataGridViewTextBoxColumn
+            // 
+            this.bookAuthorDataGridViewTextBoxColumn.DataPropertyName = "BookAuthor";
+            this.bookAuthorDataGridViewTextBoxColumn.HeaderText = "Tác giả";
+            this.bookAuthorDataGridViewTextBoxColumn.Name = "bookAuthorDataGridViewTextBoxColumn";
+            this.bookAuthorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookAuthorDataGridViewTextBoxColumn.Width = 185;
+            // 
+            // bookTitleDataGridViewTextBoxColumn
+            // 
+            this.bookTitleDataGridViewTextBoxColumn.DataPropertyName = "BookTitle";
+            this.bookTitleDataGridViewTextBoxColumn.HeaderText = "Tên sách";
+            this.bookTitleDataGridViewTextBoxColumn.Name = "bookTitleDataGridViewTextBoxColumn";
+            this.bookTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookTitleDataGridViewTextBoxColumn.Width = 230;
+            // 
+            // bookIDDataGridViewTextBoxColumn
+            // 
+            this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "BookID";
+            this.bookIDDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
+            this.bookIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookIDDataGridViewTextBoxColumn.Width = 60;
             // 
             // BookDGV
             // 
@@ -611,7 +662,7 @@ namespace QuanLyBanSach
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.BookDGV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.BookDGV.Location = new System.Drawing.Point(215, 299);
+            this.BookDGV.Location = new System.Drawing.Point(215, 312);
             this.BookDGV.Name = "BookDGV";
             this.BookDGV.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -625,71 +676,76 @@ namespace QuanLyBanSach
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.BookDGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.BookDGV.RowTemplate.Height = 30;
-            this.BookDGV.Size = new System.Drawing.Size(1075, 405);
+            this.BookDGV.Size = new System.Drawing.Size(1083, 414);
             this.BookDGV.TabIndex = 0;
             this.BookDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookDGV_CellClick);
             this.BookDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookDGV_CellContentClick);
             // 
-            // bookIDDataGridViewTextBoxColumn
+            // dataBookDataSet
             // 
-            this.bookIDDataGridViewTextBoxColumn.DataPropertyName = "BookID";
-            this.bookIDDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.bookIDDataGridViewTextBoxColumn.Name = "bookIDDataGridViewTextBoxColumn";
-            this.bookIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bookIDDataGridViewTextBoxColumn.Width = 60;
+            this.dataBookDataSet.DataSetName = "DataBookDataSet";
+            this.dataBookDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bookTitleDataGridViewTextBoxColumn
+            // bookTblBindingSource3
             // 
-            this.bookTitleDataGridViewTextBoxColumn.DataPropertyName = "BookTitle";
-            this.bookTitleDataGridViewTextBoxColumn.HeaderText = "Tên sách";
-            this.bookTitleDataGridViewTextBoxColumn.Name = "bookTitleDataGridViewTextBoxColumn";
-            this.bookTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bookTitleDataGridViewTextBoxColumn.Width = 230;
+            this.bookTblBindingSource3.DataMember = "BookTbl";
+            this.bookTblBindingSource3.DataSource = this.dataBookDataSet;
             // 
-            // bookAuthorDataGridViewTextBoxColumn
+            // bookTblTableAdapter1
             // 
-            this.bookAuthorDataGridViewTextBoxColumn.DataPropertyName = "BookAuthor";
-            this.bookAuthorDataGridViewTextBoxColumn.HeaderText = "Tác giả";
-            this.bookAuthorDataGridViewTextBoxColumn.Name = "bookAuthorDataGridViewTextBoxColumn";
-            this.bookAuthorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bookAuthorDataGridViewTextBoxColumn.Width = 185;
+            this.bookTblTableAdapter1.ClearBeforeFill = true;
             // 
-            // bookCatDataGridViewTextBoxColumn
+            // tableAdapterManager
             // 
-            this.bookCatDataGridViewTextBoxColumn.DataPropertyName = "BookCat";
-            this.bookCatDataGridViewTextBoxColumn.HeaderText = "Thể loại";
-            this.bookCatDataGridViewTextBoxColumn.Name = "bookCatDataGridViewTextBoxColumn";
-            this.bookCatDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bookCatDataGridViewTextBoxColumn.Width = 160;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BillingTblTableAdapter = null;
+            this.tableAdapterManager.BookTblTableAdapter = this.bookTblTableAdapter1;
+            this.tableAdapterManager.UpdateOrder = QuanLyBanSach.DataBookDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UserTblTableAdapter = null;
             // 
-            // bookPublisherDataGridViewTextBoxColumn
+            // fillBy1ToolStrip
             // 
-            this.bookPublisherDataGridViewTextBoxColumn.DataPropertyName = "BookPublisher";
-            this.bookPublisherDataGridViewTextBoxColumn.HeaderText = "Nhà xuất bản";
-            this.bookPublisherDataGridViewTextBoxColumn.Name = "bookPublisherDataGridViewTextBoxColumn";
-            this.bookPublisherDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bookPublisherDataGridViewTextBoxColumn.Width = 180;
+            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBy1ToolStripButton});
+            this.fillBy1ToolStrip.Location = new System.Drawing.Point(215, 45);
+            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(1083, 25);
+            this.fillBy1ToolStrip.TabIndex = 108;
+            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
             // 
-            // bookQuantityDataGridViewTextBoxColumn
+            // fillBy1ToolStripButton
             // 
-            this.bookQuantityDataGridViewTextBoxColumn.DataPropertyName = "BookQuantity";
-            this.bookQuantityDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.bookQuantityDataGridViewTextBoxColumn.Name = "bookQuantityDataGridViewTextBoxColumn";
-            this.bookQuantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
+            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy1ToolStripButton.Text = "FillBy1";
+            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click);
             // 
-            // bookPriceDataGridViewTextBoxColumn
+            // fillBy2ToolStrip
             // 
-            this.bookPriceDataGridViewTextBoxColumn.DataPropertyName = "BookPrice";
-            this.bookPriceDataGridViewTextBoxColumn.HeaderText = "Giá";
-            this.bookPriceDataGridViewTextBoxColumn.Name = "bookPriceDataGridViewTextBoxColumn";
-            this.bookPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bookPriceDataGridViewTextBoxColumn.Width = 115;
+            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBy2ToolStripButton});
+            this.fillBy2ToolStrip.Location = new System.Drawing.Point(215, 70);
+            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
+            this.fillBy2ToolStrip.Size = new System.Drawing.Size(1083, 25);
+            this.fillBy2ToolStrip.TabIndex = 109;
+            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
+            // 
+            // fillBy2ToolStripButton
+            // 
+            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
+            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy2ToolStripButton.Text = "FillBy2";
+            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
             // 
             // BookManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 704);
+            this.ClientSize = new System.Drawing.Size(1298, 704);
+            this.Controls.Add(this.fillBy2ToolStrip);
+            this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.BookDGV);
             this.Controls.Add(this.BCancelBtn);
             this.Controls.Add(this.BEditBtn);
@@ -720,18 +776,24 @@ namespace QuanLyBanSach
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookShopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BookDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBookDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource3)).EndInit();
+            this.fillBy1ToolStrip.ResumeLayout(false);
+            this.fillBy1ToolStrip.PerformLayout();
+            this.fillBy2ToolStrip.ResumeLayout(false);
+            this.fillBy2ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -775,18 +837,26 @@ namespace QuanLyBanSach
         private Guna.UI2.WinForms.Guna2Button BEditBtn;
         private Guna.UI2.WinForms.Guna2Button BCancelBtn;
         private System.Windows.Forms.Button BResetBtn;
-        private System.Windows.Forms.DataGridView BookDGV;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnViewSales;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Button btnPurchase;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookTitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookAuthorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookCatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookPublisherDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button2;
+        private DataBookDataSet dataBookDataSet;
+        private System.Windows.Forms.BindingSource bookTblBindingSource3;
+        private DataBookDataSetTableAdapters.BookTblTableAdapter bookTblTableAdapter1;
+        private DataBookDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookPublisherDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookCatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookAuthorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView BookDGV;
+        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
+        private System.Windows.Forms.ToolStrip fillBy2ToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBy2ToolStripButton;
     }
 }

@@ -19,7 +19,7 @@ namespace QuanLyBanSach
             Application.Exit();
         }
 
-        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\baolu\Desktop\KiemDinhPhanMem\PhanMemQuanLySach\TTNL\QuanLyBanSach\BookShopData.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=G:\SupportCustomer\SourceWinform\QuanLyBanSach\DataBook.mdf;Integrated Security=True;Connect Timeout=30");
         private void populate() // Kết nối cơ sở dữ liệu
         {
             Con.Open();
@@ -54,8 +54,7 @@ namespace QuanLyBanSach
 
         private void Main_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bookShopDataSet.BookTbl' table. You can move, or remove it, as needed.
-            this.bookTblTableAdapter.Fill(this.bookShopDataSet.BookTbl);
+           // this.bookTblTableAdapter.Fill(this.dataBookDataSet.BookTbl);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,13 +93,13 @@ namespace QuanLyBanSach
             */
 
             int i;
-            i = BookDGV.CurrentRow.Index;
-            BNameTb.Text = BookDGV.Rows[i].Cells[1].Value.ToString();
-            BAuTb.Text = BookDGV.Rows[i].Cells[2].Value.ToString();
-            BCateCb.SelectedItem = BookDGV.Rows[i].Cells[3].Value.ToString();
-            BPublisherTb.Text = BookDGV.Rows[i].Cells[4].Value.ToString();
-            BQuantityCb.Text = BookDGV.Rows[i].Cells[5].Value.ToString();
-            BPriceTb.Text = BookDGV.Rows[i].Cells[6].Value.ToString();
+            i = bookTblDataGridView.CurrentRow.Index;
+            BNameTb.Text = bookTblDataGridView.Rows[i].Cells[1].Value.ToString();
+            BAuTb.Text = bookTblDataGridView.Rows[i].Cells[2].Value.ToString();
+            BCateCb.SelectedItem = bookTblDataGridView.Rows[i].Cells[3].Value.ToString();
+            BPublisherTb.Text = bookTblDataGridView.Rows[i].Cells[4].Value.ToString();
+            BQuantityCb.Text = bookTblDataGridView.Rows[i].Cells[5].Value.ToString();
+            BPriceTb.Text = bookTblDataGridView.Rows[i].Cells[6].Value.ToString();
 
 
             if (BNameTb.Text == "")
@@ -109,7 +108,7 @@ namespace QuanLyBanSach
             }
             else
             {
-                key = Convert.ToInt32(BookDGV.Rows[i].Cells[0].Value.ToString());
+                key = Convert.ToInt32(bookTblDataGridView.Rows[i].Cells[0].Value.ToString());
             }
         }
 
@@ -232,13 +231,13 @@ namespace QuanLyBanSach
             }
             else
             {
-                for (int i = 0; i < BookDGV.Rows.Count; i++)
+                for (int i = 0; i < bookTblDataGridView.Rows.Count; i++)
                 {
-                    if (BNameTb.Text.ToString() == BookDGV.Rows[i].Cells[1].Value.ToString() &&
-                        BAuTb.Text.ToString() == BookDGV.Rows[i].Cells[2].Value.ToString() &&
-                        BCateCb.Text.ToString() == BookDGV.Rows[i].Cells[3].Value.ToString() &&
-                        BPublisherTb.Text.ToString() == BookDGV.Rows[i].Cells[4].Value.ToString() &&
-                        BPriceTb.Text.ToString() == BookDGV.Rows[i].Cells[6].Value.ToString())
+                    if (BNameTb.Text.ToString() == bookTblDataGridView.Rows[i].Cells[1].Value.ToString() &&
+                        BAuTb.Text.ToString() == bookTblDataGridView.Rows[i].Cells[2].Value.ToString() &&
+                        BCateCb.Text.ToString() == bookTblDataGridView.Rows[i].Cells[3].Value.ToString() &&
+                        BPublisherTb.Text.ToString() == bookTblDataGridView.Rows[i].Cells[4].Value.ToString() &&
+                        BPriceTb.Text.ToString() == bookTblDataGridView.Rows[i].Cells[6].Value.ToString())
                     {
                         temp = false;
                         break;
@@ -385,6 +384,45 @@ namespace QuanLyBanSach
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bookTblTableAdapter1.FillBy(this.dataBookDataSet.BookTbl);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bookTblTableAdapter1.FillBy1(this.dataBookDataSet.BookTbl);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bookTblTableAdapter1.FillBy2(this.dataBookDataSet.BookTbl);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

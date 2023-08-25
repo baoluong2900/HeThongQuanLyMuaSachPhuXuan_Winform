@@ -18,7 +18,7 @@ namespace QuanLyBanSach
             InitializeComponent();
            /* populate();*/
         }
-        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\baolu\Desktop\KiemDinhPhanMem\PhanMemQuanLySach\TTNL\QuanLyBanSach\BookShopData.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\baolu\Documents\DataBook.mdf;Integrated Security=True;Connect Timeout=30");
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 

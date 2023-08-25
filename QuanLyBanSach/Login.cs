@@ -13,7 +13,7 @@ namespace QuanLyBanSach
 {
     public partial class Login : Form
     {
-        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\baolu\Desktop\KiemDinhPhanMem\PhanMemQuanLySach\TTNL\QuanLyBanSach\BookShopData.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\baolu\Documents\DataBook.mdf;Integrated Security=True;Connect Timeout=30");
         public Login()
         {
             InitializeComponent();
